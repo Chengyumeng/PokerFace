@@ -1,29 +1,15 @@
 package main
 
 import (
-	"net/http"
-
-	"github.com/labstack/echo"
-	"github.com/labstack/echo/middleware"
+	"github.com/Chengyumeng/PokerFace/global"
+	"github.com/Chengyumeng/PokerFace/initial"
 )
 
 func main() {
-	// Echo instance
-	e := echo.New()
+	initial.Run("hack/porkerface.toml")
 
-	// Middleware
-	e.Use(middleware.Logger())
-	e.Use(middleware.Recover())
+	addr := global.Configuration.AppConfig.Address
 
-	// Routes
-	e.GET("/", hello)
+	global.Echo.Logger.Fatal(global.Echo.Start(addr))
 
-	// Start server
-	e.Logger.Fatal(e.Start(":1323"))
-
-}
-
-// Handler
-func hello(c echo.Context) error {
-	return c.String(http.StatusOK, "Hello, World!")
 }
