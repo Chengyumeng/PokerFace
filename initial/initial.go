@@ -1,8 +1,8 @@
 package initial
 
 import (
-	"github.com/Chengyumeng/PokerFace/routes"
 	"github.com/Chengyumeng/PokerFace/models"
+	"github.com/Chengyumeng/PokerFace/routes"
 )
 
 func Run(config string) {
