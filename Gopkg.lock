@@ -14,6 +14,24 @@
   version = "v3.2.0"
 
 [[projects]]
+  name = "github.com/go-xorm/builder"
+  packages = ["."]
+  revision = "a9b7ffcca3f0c6445c4e3b1bf72c01578817a6c3"
+  version = "v0.1.0"
+
+[[projects]]
+  name = "github.com/go-xorm/core"
+  packages = ["."]
+  revision = "f43c33d9a48db006417a7ac4c16b08897e3e1458"
+  version = "v0.5.8"
+
+[[projects]]
+  name = "github.com/go-xorm/xorm"
+  packages = ["."]
+  revision = "fc1b13e0d8e240788213230aa5747eb557f80f41"
+  version = "v0.6.6"
+
+[[projects]]
   name = "github.com/labstack/echo"
   packages = [
     ".",
@@ -75,6 +93,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "d030e1744aa3dfffd8aebe6b0c5364943f9a1dfd8a75c8e7629b418e4c13d167"
+  inputs-digest = "ca79817e5b1169b283fb0077cabd2bbf2cb435755e56b03b1f25a714977834d1"
   solver-name = "gps-cdcl"
   solver-version = 1
