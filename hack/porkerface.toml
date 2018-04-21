@@ -7,5 +7,5 @@ driver="mysql"
 user="root"
 password="0a1b2c3d4e"
 charset="utf8"
-tns="tcp(10.18.122.117:4540)/porkerface"
+tns="tcp(127.0.0.1:4540)/porkerface"
 showSQL=true
