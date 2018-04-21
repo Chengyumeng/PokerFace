@@ -5,8 +5,18 @@ type Configuration struct {
 }
 
 type AppConfig struct {
-	Address string `toml:"Address"`
-	RunMode string `toml:"RunMode"`
+	Address  string    `toml:"Address"`
+	RunMode  string    `toml:"RunMode"`
+	Database *Database `toml:"Database"`
+}
+
+type Database struct {
+	DriverName string `toml:"driver"`
+	User       string `toml:"user"`
+	Password   string `toml:"password"`
+	Charset    string `toml:"charset"`
+	Tns        string `toml:"tns"`
+	ShowSQL    bool   `toml:"showSQL"`
 }
 
 func NewDefaultConfiguration() *Configuration {
