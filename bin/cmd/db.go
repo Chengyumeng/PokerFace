@@ -28,6 +28,8 @@ func preRunE(cmd *cobra.Command, args []string) error {
 func runE(cmd *cobra.Command, args []string) error {
 	err := global.Orm.Sync(
 		models.Person{},
+		models.User{},
+		models.Comment{},
 	)
 	if err != nil {
 		return err
