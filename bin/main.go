@@ -1,15 +1,29 @@
 package main
 
 import (
-	"github.com/Chengyumeng/PokerFace/global"
-	"github.com/Chengyumeng/PokerFace/initial"
+	"fmt"
+	"github.com/spf13/cobra"
+
+	"github.com/Chengyumeng/PokerFace/bin/cmd"
 )
 
+var RootCmd = &cobra.Command{
+	Use: "porkerface",
+	Long: `PorkerFace 平台
+反馈及建议:https://github.com/Chengyumeng/PorkerFace
+`,
+	PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
+		return nil
+	},
+}
+
+func init() {
+	RootCmd.AddCommand(cmd.InitDBCmd)
+	RootCmd.AddCommand(cmd.ServerCmd)
+}
 func main() {
-	initial.Run("hack/porkerface.toml")
-
-	addr := global.Configuration.AppConfig.Address
-
-	global.Echo.Logger.Fatal(global.Echo.Start(addr))
-
+	err := RootCmd.Execute()
+	if err != nil {
+		fmt.Errorf("%v", err)
+	}
 }
