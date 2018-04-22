@@ -1,5 +1,5 @@
 package cmd
 
 var (
-	config    string
+	config string
 )

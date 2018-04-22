@@ -10,10 +10,11 @@ type personModel struct {
 	orm *xorm.Engine
 }
 
+// 评测人物
 type Person struct {
 	Id         int64     `xorm:"int pk autoincr"`
 	Name       string    `xorm:"varchar(1024)" json:"name"`
-	RecordId   int64     `xorm:int`
+	RecordId   int64     `xorm:"int"`
 	University string    `xorm:varchar(1024) json:"university"`
 	Academy    string    `xorm:varchar(1024) json:"academy"`
 	Laboratory string    `xorm:varchar(1024) json:"laboratory"`
