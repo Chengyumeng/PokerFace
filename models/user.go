@@ -14,10 +14,11 @@ type userModel struct {
 type User struct {
 	Id         int64     `xorm:"int pk autoincr"`
 	Name       string    `xorm:"varchar(1024)" json:"name"`
-	Email      string    `xorm:"varchar(1024)" json:"email"`
-	Phone      string    `xorm:"varchar(1024)" json:"phone"`
+	Email      string    `xorm:"varchar(1024)" json:"email"` // 邮箱注册用户
+	Phone      string    `xorm:"varchar(1024)" json:"phone"` // 手机号注册用户
+	IP         string    `xorm:"varchar(1024)" json:"ip"`    // 匿名用户，使用IP标识
 	University string    `xorm:"varchar(1024)" json:"university"`
-	Grade      int32     `xorm:"int"`
+	Grade      int64     `xorm:"int"`
 	IsValid    bool      `xorm:"bool"`
 	CreatedAt  time.Time `xorm:"created" json:"createdAt,omitempty"`
 	UpdateAt   time.Time `xorm:"created" json:"updateAt,omitempty"`

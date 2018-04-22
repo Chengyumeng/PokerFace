@@ -20,6 +20,7 @@ type Person struct {
 	Laboratory string    `xorm:varchar(1024) json:"laboratory"`
 	Title      string    `xorm:"varchar(1024)" json:"title"`
 	Intro      string    `xorm:"text" json:"intro"`
+	Tag        string    `xorm:"varchar(1024)" json:"tag"`
 	CreatedAt  time.Time `xorm:"created" json:"createdAt,omitempty"`
 	UpdateAt   time.Time `xorm:"created" json:"updateAt,omitempty"`
 }

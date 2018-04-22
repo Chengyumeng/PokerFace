@@ -5,8 +5,9 @@ import (
 )
 
 var (
-	PersonModel *personModel
-	UserModel   *userModel
+	PersonModel  *personModel
+	UserModel    *userModel
+	CommentModel *commentModel
 )
 
 func InitModels() {
@@ -14,6 +15,9 @@ func InitModels() {
 		global.Orm,
 	}
 	UserModel = &userModel{
+		global.Orm,
+	}
+	CommentModel = &commentModel{
 		global.Orm,
 	}
 
