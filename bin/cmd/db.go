@@ -12,7 +12,6 @@ import (
 )
 
 var (
-	config    string
 	InitDBCmd = &cobra.Command{
 		Use:     "initdb --config CONFIG",
 		Short:   "初始化数据库",
